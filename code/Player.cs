@@ -45,7 +45,7 @@ public sealed class Player : Component
 			tr.GameObject.Components.Get<ModelRenderer>().Tint = Color.Blue;
 			last = tr.GameObject; 
 		}
-		if (tr.GameObject != null && Input.Pressed("use") && tr.GameObject.Components.Get<Brick>() != null && brick == null)
+		if (tr.GameObject != null && Input.Pressed("use") && tr.GameObject.Components.Get<Brick>() != null && brick == null && GameC.Gamec.current_player == this)
 		{
 			tr.GameObject.Components.Get<Brick>().Use(this);
 			Log.Info( "Use" );

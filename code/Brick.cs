@@ -67,6 +67,7 @@ public sealed class Brick : Component
 				EnableBody();
 				IsUse = false;
 				player.brick = null;
+				GameC.Gamec.Next_Player();
 			}
 			return;
 		}
