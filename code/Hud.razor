@@ -1,0 +1,22 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	@if (game != null && game.current_player != null)
+	{
+		<div class="player">current player: @game.current_player.Network.OwnerConnection.DisplayName</div>
+	}
+</root>
+
+@code
+{
+	GameC game = GameC.Gamec;
+	protected override void OnUpdate()
+	{
+		base.OnUpdate(); 
+		Log.Info(game);
+	}
+	// current_player.Network.OwnerConnection.DisplayName
+	protected override int BuildHash() => System.HashCode.Combine( Time.Now );
+}

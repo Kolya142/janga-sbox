@@ -721,6 +721,40 @@
           "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
+    },
+    {
+      "__guid": "3343970e-429e-419e-b169-b0ceed53cbf4",
+      "Name": "GameController",
+      "Position": "-158.9748,112.7661,180.2615",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "GameC",
+          "__guid": "d0c08ece-9783-45b0-a253-993e0d11f418"
+        }
+      ]
+    },
+    {
+      "__guid": "5d59377f-bd2b-4637-af09-8d4a277a56f5",
+      "Name": "Hud",
+      "Position": "-158.9748,112.7661,180.2615",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "882d6483-0b2b-4ed5-aee2-fab80fb9f630",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "Hud",
+          "__guid": "ac440a38-0ec5-4365-a13b-fb18e5a3d1ca"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -746,7 +780,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-04-05T11:39:18.9440642\u002B03:00",
+  "LastSaved": "2024-04-05T13:58:32.1580733\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

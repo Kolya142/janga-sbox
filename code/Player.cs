@@ -53,7 +53,6 @@ public sealed class Player : Component
 		else if (Input.Pressed("use") && brick != null)
 		{
 			brick.Use(this);
-			brick = null;
 		}
 	}
 }
