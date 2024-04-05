@@ -1,0 +1,21 @@
+{
+  "RootObject": {
+    "__guid": "656b2e76-489b-4ddf-8dec-454cd37ceee4",
+    "Name": "Player",
+    "Position": "-665.4858,749.236,1196.647",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Player",
+        "__guid": "d2227812-a20a-454b-bc73-575e66a65c08"
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

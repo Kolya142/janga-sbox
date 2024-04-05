@@ -1,0 +1,753 @@
+{
+  "__guid": "9f832399-4887-46b0-8f21-2ee284f538e2",
+  "GameObjects": [
+    {
+      "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
+      "Name": "Sun",
+      "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "__guid": "3e1992b0-9e31-45c1-bd3c-62d2b27be5b1",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.94419,0.97767,1,1",
+          "Shadows": true,
+          "SkyColor": "0.2532,0.32006,0.35349,1"
+        }
+      ]
+    },
+    {
+      "__guid": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
+      "Name": "2D Skybox",
+      "Tags": "skybox",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__guid": "dfb33dd8-e25b-4338-a91f-6b6084b02c38",
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny03.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnvmapProbe",
+          "__guid": "96a4046a-76d8-4bf4-9555-9a3c18e1c60d",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Feathering": 0.02,
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
+      "Name": "Plane",
+      "Scale": "3,3,3",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "d78c6086-ed42-4c5b-8ab6-c9d741448ab1",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/default.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderType": "On",
+          "Tint": "0.39546,0.51163,0.27128,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "9a8e1792-fa85-4331-8d18-65f9fb542630",
+          "Center": "0,0,-2.5",
+          "IsTrigger": false,
+          "Scale": "100,100,5",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "698e32af-3d5a-48b1-9dd6-ae20453b9910",
+      "Name": "Plane (1)",
+      "Rotation": "-0,1,-0,-0.00000004371139",
+      "Scale": "3,3,3",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "d1c9313b-162e-4a5a-875c-21566f10f5b2",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/default.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderType": "On",
+          "Tint": "0.39546,0.51163,0.27128,1"
+        }
+      ]
+    },
+    {
+      "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
+      "Name": "Camera",
+      "Position": "-267.452,-379.653,297.7903",
+      "Rotation": "-0.1448582,0.2860239,0.4279631,0.8450171",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "__guid": "172b84bb-ce30-4fea-9f6a-aef5e28d4ab9",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        },
+        {
+          "__type": "Bloom",
+          "__guid": "1534df45-a232-4bf8-bed2-ab32427ca33b",
+          "BloomColor": {
+            "color": [
+              {
+                "c": "1,1,1,1"
+              },
+              {
+                "t": 1,
+                "c": "1,1,1,1"
+              }
+            ],
+            "alpha": []
+          },
+          "BloomCurve": [
+            {
+              "y": 0.5
+            },
+            {
+              "x": 1,
+              "y": 1
+            }
+          ],
+          "Mode": "Additive",
+          "Strength": 0.5,
+          "Threshold": 0.5,
+          "ThresholdWidth": 0.5
+        },
+        {
+          "__type": "Tonemapping",
+          "__guid": "d9e8dacb-e298-4f69-a5fe-34adc77799d0",
+          "ExposureCompensation": 0,
+          "MaximumExposure": 2,
+          "MinimumExposure": 1,
+          "Rate": 1
+        },
+        {
+          "__type": "Sharpen",
+          "__guid": "9fafbdc7-4225-4570-b9e2-091110c29ffd",
+          "Scale": 0.2
+        },
+        {
+          "__type": "CameraMove",
+          "__guid": "6ecfbc88-9d65-460c-b704-335180d4cbeb",
+          "CameraDistance": 500,
+          "CameraDistanceBorder": "300,1000",
+          "offset": "0,0,0"
+        },
+        {
+          "__type": "FilmGrain",
+          "__guid": "283a909a-0a01-4b70-a680-5988d6848c3f",
+          "Intensity": 0.1,
+          "Response": 0.5
+        }
+      ]
+    },
+    {
+      "__guid": "4340fb97-cfe4-43d5-89b5-01afcd44ad63",
+      "Name": "Brick",
+      "Position": "0,100.4637,25.5185",
+      "Scale": "5.999997,2,1",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "33877e3a-b68e-446e-b449-2393ea19e0ba",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0.93814,0.3814,1"
+        },
+        {
+          "__type": "Brick",
+          "__guid": "b4b63b2b-87cd-4d4d-8620-89066be0994f"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "c576d8d1-63b5-4982-8ade-2739cf08c2ed",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50.00001,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "e7416976-1e87-4fdc-a718-c604383d5998",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "b5256701-710f-43e6-aa39-2a3eba23fedb",
+      "Name": "Brick (11)",
+      "Position": "100.9548,-0.2246704,176.1531",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "5.999997,2,1",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "ef076682-d9e4-4852-b8ad-9f2701d292bb",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0.93814,0.3814,1"
+        },
+        {
+          "__type": "Brick",
+          "__guid": "5c3a207f-fb9e-45e7-97fd-6ede31aef026"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "dc024777-d938-4ac4-aca3-8010b22dec06",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50.00001,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "8f5e9d2c-b589-4842-8911-dfec233ff9b8",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "1e10f9cb-2d1e-4005-9bcf-46820bcbd21c",
+      "Name": "Brick (10)",
+      "Position": "-99.92444,-0.2246552,176.1531",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "5.999997,2,1",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "a66200c4-a60e-43fc-bdb8-1567e2c31c83",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0.93814,0.3814,1"
+        },
+        {
+          "__type": "Brick",
+          "__guid": "18234c7b-eabe-4da6-a97d-5cb271fbe717"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "b8ec0699-3f7a-4a85-9b6b-556f5e9f4fad",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50.00001,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "5947f406-9297-4f77-abcb-aa4d256dd7e5",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "f35d70c6-8bef-46d4-8b78-c7dd967eefbd",
+      "Name": "Brick (9)",
+      "Position": "0.5392456,-0.2246704,176.1531",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "5.999997,2,1",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "9cbbda60-c1b8-498f-9210-d4d306f0d069",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0.93814,0.3814,1"
+        },
+        {
+          "__type": "Brick",
+          "__guid": "5bf41a50-7168-4ee5-8778-7867e1b5a650"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "2cacdeab-1ad9-4d15-b943-33f2e0e8695e",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50.00001,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "5673950d-8d93-4e4c-9f80-021b1624f1a1",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "c902adcb-793c-40e9-ae0b-c8eee953bed5",
+      "Name": "Brick (8)",
+      "Position": "0,-100.4156,125.7685",
+      "Scale": "5.999997,2,1",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "49c94caa-9148-4974-ae88-06f268594883",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0.93814,0.3814,1"
+        },
+        {
+          "__type": "Brick",
+          "__guid": "b22a7315-0cf2-48e7-8702-04d80f82c4a4"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "fb3f4f68-ebe8-4bb6-9443-ba0db1b388d6",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50.00001,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "4488392c-e7a5-4f0a-b84e-bb91d206140c",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "af10e2e9-95bc-40e3-afd9-739a47bea66a",
+      "Name": "Brick (7)",
+      "Position": "0,0,125.7685",
+      "Scale": "5.999997,2,1",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "201653fd-06e7-4f04-b420-472203b15d23",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0.93814,0.3814,1"
+        },
+        {
+          "__type": "Brick",
+          "__guid": "f64863ec-9e0b-42ce-a50a-64752af6058a"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "2dbd9062-4ea4-4b8e-ba83-932215ff483e",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50.00001,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "65f10f23-0cb5-4377-9914-30e32d8b64cc",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "b9d1a311-4bc1-45a4-bfdc-7a157178b36e",
+      "Name": "Brick (6)",
+      "Position": "0,100.4637,125.7685",
+      "Scale": "5.999997,2,1",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "61eee425-de21-4371-868b-454f4ddadda8",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0.93814,0.3814,1"
+        },
+        {
+          "__type": "Brick",
+          "__guid": "28fe97f5-54a8-421e-8e5b-dc6f8944e008"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "ca078f9b-ae2b-4fb7-a6c4-2e1c36e73b99",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50.00001,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "35eb95d9-b405-4f21-aa19-5ec183cf89ba",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "3f62a4f0-9aec-4b25-809d-a9d6d5622a50",
+      "Name": "Brick (1)",
+      "Position": "0,0,25.5185",
+      "Scale": "5.999997,2,1",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "90ba0b26-4f8b-461e-8511-8799d9442d6c",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0.93814,0.3814,1"
+        },
+        {
+          "__type": "Brick",
+          "__guid": "d7282fa0-0f71-401e-84ab-f0eac307992f"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "e8ede9b8-d0b7-439a-a777-071c16e58a46",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50.00001,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "4ac03c6c-954c-4149-a471-301e40b2c763",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "dc5d4acc-da09-48c8-82db-7b916a8e73e1",
+      "Name": "Brick (2)",
+      "Position": "0,-100.4156,25.5185",
+      "Scale": "5.999997,2,1",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "87e7de30-ab6f-46da-b7ad-3aeef5edd7dc",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0.93814,0.3814,1"
+        },
+        {
+          "__type": "Brick",
+          "__guid": "e91cc1ae-e3ea-48f0-8002-4af9a08a20ab"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "c24831ce-548d-47bb-9f10-bf803362f0f2",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50.00001,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "27380622-2437-4bab-94ea-677c3335d19f",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "11b552c3-6305-4ed9-aacd-94c9b48bd8e2",
+      "Name": "Brick (3)",
+      "Position": "0.5392456,-0.2246704,75.90305",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "5.999997,2,1",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "bdf1666b-e2df-4a17-be71-36003fff161b",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0.93814,0.3814,1"
+        },
+        {
+          "__type": "Brick",
+          "__guid": "800c2b30-828c-4b14-8f42-de58f0e4f030"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "8c5e689b-a1bc-40f5-8baf-74e980ef61e8",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50.00001,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "a7227035-be02-409a-a1ce-1cb77e2fb5b1",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "a31e9b31-87a0-4c9e-9f5e-d7bb53a9c061",
+      "Name": "Brick (4)",
+      "Position": "-99.92444,-0.2246552,75.90305",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "5.999997,2,1",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "9198e9bd-7a34-4ce4-9895-3112f9d967fc",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0.93814,0.3814,1"
+        },
+        {
+          "__type": "Brick",
+          "__guid": "89afb9ea-0d23-4fcc-8c1c-50500266b617"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "6f3daa62-00b8-4fe6-9c3f-2564d2e1e862",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50.00001,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "51f7a69f-033c-44cc-af5c-477b1eaa873f",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "cc830f73-c8d1-4af7-80b2-b616b7193842",
+      "Name": "Brick (5)",
+      "Position": "100.9548,-0.2246704,75.90305",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "5.999997,2,1",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "71fb862d-2386-427e-9fd4-791cee10aaf6",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0.93814,0.3814,1"
+        },
+        {
+          "__type": "Brick",
+          "__guid": "c7f6d824-9b78-4515-93f0-d84d6b083d05"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "b411ec07-a328-4b01-a8f2-eb0ea99ae305",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50.00001,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "060ab184-b3de-441d-b5e3-0e113f37d9b7",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "3ea222fb-4ebc-4dff-b5ed-c4447f254dd0",
+      "Name": "Network",
+      "Position": "-35.38106,-35.31164,7.663239",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "NetworkHelper",
+          "__guid": "34f3c3b6-379e-4e41-bb15-e6f302a91501",
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefab/player.prefab"
+          },
+          "SpawnPoints": [
+            {
+              "_type": "gameobject",
+              "go": "e552617f-9934-494b-9002-221b71968815"
+            }
+          ],
+          "StartServer": true
+        }
+      ]
+    },
+    {
+      "__guid": "e552617f-9934-494b-9002-221b71968815",
+      "Name": "SpawnPoint",
+      "Position": "82.35232,98.9519,0.00003709512",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SpawnPoint",
+          "__guid": "1952e21b-e5cb-4304-8d2a-1757c426e5e6",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "minimal",
+  "Description": "",
+  "LastSaved": "2024-04-05T11:39:18.9440642\u002B03:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}
